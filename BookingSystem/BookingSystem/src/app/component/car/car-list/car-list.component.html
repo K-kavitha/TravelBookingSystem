@@ -1,0 +1,59 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="main-content">
+  <div class="sub-container">
+    <div class="card" style="width: auto">
+      <div class="card-header customCardHeader">
+        <h2>
+          <span>Car List</span>
+          <button
+            *ngIf="isAdmin()"
+            (click)="navigateToCreateCar()"
+            class="btn btn-success btn-sm ml-2 createBusButton"
+          >
+            <i class="fa fa-plus"></i> Add
+          </button>
+        </h2>
+      </div>
+        <table>
+          <thead>
+            <tr>
+              <th>CarId</th>
+              <th>Model</th>
+              <th>Color</th>
+              <th>Arrival Time</th>
+              <th>Departure Time</th>
+              <th>Route</th>
+              <th>Ticket Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tempcar of car">
+              <td>{{ tempcar.carId }}</td>
+              <td>{{ tempcar.carModel }}</td>
+              <td>{{ tempcar.carColor }}</td>
+              <td>{{ tempcar.arrivalTime }}</td>
+              <td>{{ tempcar.departureTime }}</td>
+              <td>{{ tempcar.route }}</td>
+              <td>{{ tempcar.ticketAmount }}</td>
+              <td *ngIf="isAdmin()">
+                <button
+                  (click)="navigateToUpdateCar(tempcar.carId)"
+                  class="btn btn-warning btn-sm"
+                >
+                  Edit
+                </button>
+                <button
+                  (click)="deleteCar(tempcar.carId)"
+                  class="btn btn-danger btn-sm"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+

@@ -1,0 +1,52 @@
+/* user-list.component.css */
+
+/* Style the table */
+/* styles.css */
+
+body {
+  background-color: rgb(143, 143, 172); /* Set the background color to blue */
+  margin: 0; /* Reset default margin to remove white space around the body */
+  font-family: Arial, sans-serif; /* Set a font family if needed */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color:
+  rgb(38, 38, 88); /* Set the background color to blue */
+}
+
+/* Style the table header */
+.table th {
+  background-color: #9b3838;
+  color: #c5a7a7;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style the table rows */
+.table tr {
+  background-color: #f2f2f2;
+}
+
+/* Style alternating rows for better readability */
+.table tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+/* Style table cell padding and text alignment */
+.table td {
+  padding: 10px;
+}
+
+/* Style the table header cells */
+.table th,
+.table td {
+  border: 1px solid #ccc;
+}
+
+/* Add some margin to the main content */
+.main-content {
+  margin: 20px;
+}

@@ -1,0 +1,158 @@
+<div class="main-container" style="
+  background-image: url('assets/images/bgf.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+">
+  <div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3><b>Register Today</b></h3>
+            <p>Fill in the data below.</p>
+            <form (ngSubmit)="SaveUsers()" #signupForm="ngForm" class="signup-form">
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="userName"
+                  [(ngModel)]="user.first_name"
+                  name="first_name"
+                  placeholder="First Name"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="customerName"
+                  [(ngModel)]="user.last_name"
+                  name="last_name"
+                  placeholder="Last Name"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="username"
+                  [(ngModel)]="user.username"
+                  name="username"
+                  placeholder="Username"
+                  required
+                  pattern="^(?=\S*[a-zA-Z])(?=\S*[0-9])[A-Za-z\d]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="password"
+                  id="password"
+                  [(ngModel)]="user.password"
+                  name="password"
+                  placeholder="Password"
+                  required
+                  pattern="^.{6,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="email"
+                  id="email"
+                  [(ngModel)]="user.email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="phonenumber"
+                  [(ngModel)]="user.phoneNumber"
+                  name="phonenumber"
+                  placeholder="phonenumber"
+                  required
+                  pattern="^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="profileImage"
+                  [(ngModel)]="user.profileImage"
+                  name="profileImage"
+                  placeholder="profileImage Name"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="address"
+                  [(ngModel)]="user.address"
+                  name="address"
+                  placeholder="address"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="district"
+                  [(ngModel)]="user.district"
+                  name="district"
+                  placeholder="district"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="state"
+                  [(ngModel)]="user.state"
+                  name="state"
+                  placeholder="state"
+                  required
+                  pattern="^[A-Za-z]{4,}$"
+                />
+              </div>
+              <button class="form-button mt-3" id="submit" type="submit" >
+
+                Sign Up
+
+              </button>
+              <button type="reset" class="reset-button-blue">
+                Reset
+              </button>
+              <br />
+              <p class="bottom" style="margin-top: 20px;">
+                Already Registered?
+                <a class="bottom" [routerLink]="['/user/login']">
+                  Login here
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

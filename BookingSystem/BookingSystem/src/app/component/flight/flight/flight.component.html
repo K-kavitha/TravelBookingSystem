@@ -1,0 +1,63 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div class="main-content">
+  <div class="sub-container">
+    <div class="card" style="width: auto">
+      <div class="card-header customCardHeader">
+        <h2>
+          <span>Flight List</span>
+          <button
+            *ngIf="isAdmin()"
+            (click)="navigateToCreateFlight()"
+            class="btn btn-success btn-sm ml-2 createBusButton"
+          >
+            <i class="fa fa-plus"></i> Add
+          </button>
+        </h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Airline</th>
+              <th scope="col">Capacity</th>
+              <th scope="col">Departure</th>
+              <th scope="col">Arrival</th>
+              <th scope="col">Source</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Ticket Amount</th>
+              <th scope="col" *ngIf="isAdmin()">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tempflight of flight">
+              <td>{{ tempflight.flightId }}</td>
+              <td>{{ tempflight.airline }}</td>
+              <td>{{ tempflight.capacity }}</td>
+              <td>{{ tempflight.departure | date : "short" }}</td>
+              <td>{{ tempflight.arrival | date : "short" }}</td>
+              <td>{{ tempflight.source }}</td>
+              <td>{{ tempflight.destination }}</td>
+              <td>{{ tempflight.ticket_amount }}</td>
+              <td *ngIf="isAdmin()">
+                <button
+                  (click)="navigateToUpdateFlight(tempflight.flightId)"
+                  class="btn btn-warning btn-sm"
+                >
+                  Edit
+                </button>
+                <button
+                  (click)="deleteFlight(tempflight.flightId)"
+                  class="btn btn-danger btn-sm"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

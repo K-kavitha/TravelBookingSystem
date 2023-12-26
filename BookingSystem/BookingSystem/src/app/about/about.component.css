@@ -1,0 +1,36 @@
+/* src/app/about/about.component.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.about-container {
+    background-image: url('../../assets/images/About.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align content at the bottom */
+    color: rgb(194, 94, 94);
+    padding-bottom: 20px; /* Optional: Add some padding at the bottom */
+}
+
+.colorful-text {
+    color: #000; /* Set to black */
+    font-weight: bold; /* Set to bold */
+}
+.layout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+  }
+h1,p,h2{
+	font-weight: bold;
+	color: rgb(23, 11, 0);
+  }

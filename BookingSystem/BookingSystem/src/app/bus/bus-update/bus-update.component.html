@@ -1,0 +1,58 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container">
+    <h2>Update Bus</h2>
+    <form [formGroup]="busForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" id="busId" formControlName="busId">
+      <!-- Bus Number -->
+      <div class="form-group">
+        <label for="busNumber">Bus Number</label>
+        <input type="text" id="busNumber" class="form-control" formControlName="busNumber">
+      </div>
+
+      <!-- Bus Name -->
+      <div class="form-group">
+        <label for="busName">Bus Name</label>
+        <input type="text" id="busName" class="form-control" formControlName="busName">
+      </div>
+
+      <!-- Capacity -->
+      <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" class="form-control" formControlName="capacity">
+      </div>
+
+      <!-- Departure -->
+      <div class="form-group">
+        <label for="departure">Departure</label>
+        <input type="datetime-local" id="departure" class="form-control" formControlName="departure">
+      </div>
+
+      <!-- Arrival -->
+      <div class="form-group">
+        <label for="arrival">Arrival</label>
+        <input type="datetime-local" id="arrival" class="form-control" formControlName="arrival">
+      </div>
+
+      <!-- Source -->
+      <div class="form-group">
+        <label for="source">Source</label>
+        <input type="text" id="source" class="form-control" formControlName="source">
+      </div>
+
+      <!-- Destination -->
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" class="form-control" formControlName="destination">
+      </div>
+
+      <!-- Ticket Amount -->
+      <div class="form-group">
+        <label for="ticket_amount">Ticket Amount</label>
+        <input type="number" id="ticketAmount" class="form-control" formControlName="ticket_amount">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Update Bus</button>
+    </form>
+  </div>
+

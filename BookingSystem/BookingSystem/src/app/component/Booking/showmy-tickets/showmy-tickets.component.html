@@ -1,0 +1,35 @@
+<div class="main-conatiner" style="
+background-image: url('assets/images/paybg.jpeg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+height: 90vh;
+overflow: hidden;">
+
+    <div class="ticket">
+        <h1 class="ticket-title"> Ticket</h1>
+        <div class="ticket-details">
+            <p><strong>Passenger Name:</strong>{{ user.first_name }}{{ user.last_name }}</p>
+               <b>YOUR Payment Successful!!</b><br>
+               <b>Ticket Booked</b><br>
+               <b>Happy jouney</b><br>
+
+            <!--<p><strong>Bus Number:</strong> {{bus.busId}}</p>
+            <p><strong>Departure Time:</strong> 10:00 AM</p>
+            <p><strong>Seat Number:</strong> 12A</p>
+
+            <p><strong>Date of Journey:</strong> October 15, 2023</p>
+            <p><strong>Source:</strong>{{booking.source}}</p>
+            <p><strong>Destination:</strong> {{booking.destination}}</p>-->
+        </div>
+        <a href="/userHome" class="back-button">Back to Home</a>
+        <button (click)="logout()" class="logout-button ">Logout</button>
+
+
+
+    </div>
+
+
+
+

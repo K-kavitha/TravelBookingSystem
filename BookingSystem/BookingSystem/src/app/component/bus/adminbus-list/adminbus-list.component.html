@@ -1,0 +1,66 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="main-content">
+  <div class="sub-container">
+    <div class="card" style="width: auto">
+      <div class="card-header customCardHeader">
+        <h2>
+          <span>Bus List</span>
+          <button
+            *ngIf="isAdmin()"
+            (click)="navigateToCreateBus()"
+            class="btn btn-success btn-sm ml-2 createBusButton"
+          >
+            <i class="fa fa-plus"></i> Add
+          </button>
+        </h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Bus Number</th>
+              <th scope="col">Bus Name</th>
+              <th scope="col">Capasity</th>
+              <th scope="col">Departure</th>
+              <th scope="col">Arrival</th>
+              <th scope="col">Source</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Ticket Amount</th>
+              <th scope="col" *ngIf="isAdmin()">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tempbus of bus">
+              <td>{{ tempbus.busId }}</td>
+              <td>{{ tempbus.busNumber }}</td>
+              <td>{{ tempbus.busName }}</td>
+              <td>{{ tempbus.capacity }}</td>
+              <td>{{ tempbus.departure | date : "short" }}</td>
+              <td>{{ tempbus.arrival | date : "short" }}</td>
+              <td>{{ tempbus.source }}</td>
+              <td>{{ tempbus.destination }}</td>
+              <td>{{ tempbus.ticket_amount }}</td>
+              <td *ngIf="isAdmin()">
+                <!-- <button (click)="viewBus(tempbus)" class="btn btn-primary btn-sm">View</button> -->
+                <button
+                  (click)="navigateToUpdateBus(tempbus.busId)"
+                  class="btn btn-warning btn-sm"
+                >
+                  Edit
+                </button>
+                <button
+                  (click)="deleteBus(tempbus.busId)"
+                  class="btn btn-danger btn-sm"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

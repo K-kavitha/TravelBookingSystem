@@ -1,0 +1,144 @@
+<div class="container bg-light d-md-flex align-items-center">
+  <div class="card box1 shadow-sm p-md-5 p-4">
+    <div class="fw-bolder mb-4">
+      <i class="fas fa-dollar-sign"></i>
+      <span class="ps-1">50 % discount</span>
+      <h1>Pay For Booking</h1>
+
+      <div class="d-flex align-items-center justify-content-between text mt-5">
+        <div class="d-flex flex-column text">
+          <span>Customer Support:</span>
+          <span>Online Chat 24/7</span>
+        </div>
+        <div class="btn btn-primary rounded-circle" href="helpchat">
+          <i class="fas fa-comment-alt"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-end text mt-5">
+    <div class="btn btn-primary rounded-circle">
+      <a href="/helpchat">
+        <i class="fas fa-comment-alt"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="card box2 shadow-sm">
+    <div class="d-flex align-items-center justify-content-between p-md-5 p-4">
+      <span class="h5 fw-bold m-0">Payment methods</span>
+      <div class="btn btn-primary bar">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <ul class="nav nav-tabs mb-3 px-md-4 px-2">
+      <li class="nav-item">
+        <a class="nav-link px-2 active" aria-current="page" href="#">
+          Credit Card
+        </a>
+      </li>
+    </ul>
+    <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
+      <div class="btn btn-success me-4">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+    <form [formGroup]="paymentForm" id="paymentForm">
+      <input
+        class="form-control"
+        type="hidden"
+        id="bookingId"
+        formControlName="bookingId"
+        required
+      />
+      <input
+        class="form-control"
+        type="hidden"
+        id="ticket_amount"
+        [(ngModel)]="flight.ticket_amount"
+        formControlName="ticket_amount"
+        required
+      />
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex flex-column px-md-5 px-4 mb-4">
+            <span>Credit Card</span>
+            <div class="inputWithIcon">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="XXXX XXXX XXXX XXXX"
+                id="cardNumber"
+                formControlName="cardNumber"
+                required
+              />
+              <span class="">
+                <img
+                  src="https://www.freepnglogos.com/uploads/mastercard-png/mastercard-logo-logok-15.png"
+                  alt=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex flex-column ps-md-5 px-md-0 px-4 mb-4">
+            <span>Expiration Date</span>
+            <div class="inputWithIcon">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="MM/YYYY"
+                id="expYear"
+                formControlName="expYear"
+                required
+              />
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex flex-column pe-md-5 px-md-0 px-4 mb-4">
+            <span>Code CVV</span>
+            <div class="inputWithIcon">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="123"
+                id="cvv"
+                formControlName="cvv"
+                required
+              />
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="d-flex flex-column px-md-5 px-4 mb-4">
+            <span>Name</span>
+            <div class="inputWithIcon">
+              <input
+                class="form-control text-uppercase"
+                type="text"
+                placeholder="Your Name"
+              />
+              <i class="far fa-user"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 px-md-5 px-4 mt-3">
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            (click)="savePaymentDetails()"
+          >
+          Pay {{ flightDetails?.ticket_amount | currency : "INR" }}
+
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

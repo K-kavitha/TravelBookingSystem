@@ -1,0 +1,56 @@
+<div class="main-container" style="
+  background-image: url('assets/images/Booking.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+">
+  <div class="form-body">
+    <div class="row">
+      <div class="form-holder">
+        <div class="form-content">
+          <div class="form-items">
+            <h3><b>BOOKING Your TrIp</b></h3>
+            <p>Fill in the data below.</p>
+            <form [formGroup]="bookingTrain" class="signup-form" (ngSubmit)="trainBooking()">
+              <input class="form-control" type="hidden" id="trainId" formControlName="trainId" required>
+              <input class="form-control" type="hidden" id="ticket_amount" formControlName="ticket_amount" required>
+              <!-- <div class="col-md-5">
+                <label for="date">Date</label>
+                <input class="form-control" type="date" id="date" formControlName="departure" required>
+              </div> -->
+
+              <div class="col-md-5">
+                <label for="Source">Source</label>
+                <input class="form-control" type="text" id="source" formControlName="source" placeholder="Source" required>
+              </div>
+
+              <div class="col-md-5">
+                <label for="destination">Destination</label>
+                <input class="form-control" type="text" id="destination" formControlName="destination" placeholder="Destination" required>
+              </div>
+
+              <div class="col-md-5">
+                <label for="departure">Departure</label>
+                <input class="form-control" type="datetime-local" id="departure" formControlName="departure" required>
+              </div>
+
+              <div class="col-md-5">
+                <label for="arrival">Arrival</label>
+                <input class="form-control" type="datetime-local" id="arrival" formControlName="arrival" required>
+              </div>
+
+              <button (click)="onSubmit()" class="form-button mt-3" id="submit">
+                BOOKING
+              </button>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

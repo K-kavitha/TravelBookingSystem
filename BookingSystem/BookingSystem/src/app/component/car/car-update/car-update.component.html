@@ -1,0 +1,42 @@
+<app-admin-navbar></app-admin-navbar>
+<!-- Modify the template as needed -->
+<div class="container">
+  <h2>Update Car</h2>
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" id="carId" formControlName="carId">
+
+    <div class="form-group">
+      <label for="carModel">Car Model</label>
+      <input type="text" id="carModel" class="form-control" formControlName="carModel">
+    </div>
+
+    <div class="form-group">
+      <label for="carColor">Car Color</label>
+      <input type="text" id="carColor" class="form-control" formControlName="carColor">
+    </div>
+
+    <div class="form-group">
+      <label for="arrivalTime">Arrival Time</label>
+      <input type="datetime-local" id="arrivalTime" class="form-control" formControlName="arrivalTime">
+    </div>
+
+    <div class="form-group">
+      <label for="departureTime">Departure Time</label>
+      <input type="datetime-local" id="departureTime" class="form-control" formControlName="departureTime">
+    </div>
+
+    <div class="form-group">
+      <label for="route">Route</label>
+      <input type="text" id="route" class="form-control" formControlName="route">
+    </div>
+
+    <div class="form-group">
+      <label for="ticketAmount">Ticket Amount</label>
+      <input type="number" id="ticketAmount" class="form-control" formControlName="ticketAmount">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Update Car</button>
+  </form>
+</div>
+

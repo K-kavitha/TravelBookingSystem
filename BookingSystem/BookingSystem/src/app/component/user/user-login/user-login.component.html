@@ -1,0 +1,81 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-bGzn5l4O5tbk6Kp56vP7Uft/jP1z0zZk+1b+9/gS2iBScfCB6WyqssUWQmMnO5Z5d" crossorigin="anonymous">
+<section class="ftco-section" style="
+  background-image: url('assets/images/loginbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;">
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+
+			<form class="login" #spForm="ngForm" (ngSubmit)="Getlogin()">
+        <h2 class="heading-section" style="margin-top: 20px;">
+          <strong>User Login</strong>
+        </h2>
+
+				<div class="login__field">
+
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input"
+          id="username"
+                name="username"
+                [(ngModel)]="user.username"
+                placeholder="Enter User Name"
+                minlength="5"
+                required>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+
+					<input type="password"
+          class="login__input" placeholder="Password"
+          id="password"
+                name="password"
+                [(ngModel)]="user.password"
+                placeholder="Enter password"
+                minlength="6"
+                required>
+				</div>
+				<button class="button login__submit"
+        type="submit"
+        class="form-control btn btn-primary submit px-3"
+        [disabled]="!spForm.valid">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+        <p class="bottom" style="color: black;">
+         <b> Already have an account?</b>
+          <a
+            class="bottom"
+            href="user/signup"
+            style="color: black; text-decoration: none; padding-left: 5px;"
+          >
+            register here
+          </a>
+        </p>
+        <br>
+        <p>
+          <a
+            class="bottom"
+            href="/"
+            style="color: rgb(185, 94, 94);"
+          >
+            <strong>Back to Home....</strong>
+          </a>
+        </p>
+			</form>
+
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>
+	</div>
+</div>
+</section>

@@ -1,0 +1,39 @@
+
+<div class="main-content">
+  <div class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">
+    <h2>Flight List</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Flight Name</th>
+          <th>Capacity</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Ticket Amount</th>
+          <th>Action</th> <!-- Add a column for the "Book" button -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tempflight of flight">
+          <td>{{ tempflight.flightId }}</td>
+          <td>{{ tempflight.airline }}</td>
+          <td>{{ tempflight.capacity }}</td>
+          <td>{{ tempflight.departure | date : "short" }}</td>
+          <td>{{ tempflight.arrival | date : "short" }}</td>
+          <td>{{ tempflight.source }}</td>
+          <td>{{ tempflight.destination }}</td>
+          <td>{{ tempflight.ticket_amount }}</td>
+          <td>
+            <button (click)="navigateToBookFlight(tempflight.flightId)">
+              Book
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

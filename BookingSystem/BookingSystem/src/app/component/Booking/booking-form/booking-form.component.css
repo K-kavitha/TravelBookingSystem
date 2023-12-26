@@ -1,0 +1,4 @@
+.form-control {
+  width: 100%; /* 100% width of the parent container */
+  /* You can set a specific width in pixels or any other unit if you prefer */
+}

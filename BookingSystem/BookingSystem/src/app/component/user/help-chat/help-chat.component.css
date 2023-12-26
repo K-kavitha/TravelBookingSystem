@@ -1,0 +1,91 @@
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Add a dark background color to the chat container */
+.chat-container {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chat-box {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 150px;
+  overflow-y: auto;
+}
+
+.user-message {
+  text-align: right;
+  margin-bottom: 5px;
+  color: #fff; /* White text for user messages */
+}
+
+.bot-message {
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #007bff; /* Blue text for bot messages */
+}
+
+.input-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Chat window styles */
+.chat-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+/* Styling for the chat content */
+.chat-content {
+  padding: 10px;
+  /* Add your chat styles here */
+}

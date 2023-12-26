@@ -1,0 +1,43 @@
+
+<!-- app.component.html -->
+<section class="ftco-section" style="
+  background-image: url('assets/images/helpbg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;">
+<div class="container">
+  <h1>Help Chat</h1>
+  <div class="chat-container">
+    <div class="chat-box">
+      <div *ngFor="let message of messages" [ngClass]="{'user-message': message.isUser, 'bot-message': !message.isUser}">
+        {{ message.text }}
+      </div>
+    </div>
+  </div>
+  <div class="input-box">
+    <div class="questions-list">
+      <p>Choose a question:</p>
+      <ul>
+        <li *ngFor="let question of predefinedQuestions" (click)="sendMessage(question)">{{ question }}</li>
+      </ul>
+    </div>
+    <input [(ngModel)]="currentQuestion" [disabled]="currentQuestion.trim() !== ''" placeholder="Or, ask a new question..." />
+    <button (click)="sendMessage(currentQuestion)" [disabled]="currentQuestion.trim() === ''">Send</button>
+  </div>
+</div>
+
+<button (click)="toggleChat()">Open Chat</button>
+
+<!-- Chat window -->
+<div *ngIf="isOpen" class="chat-window">
+  <!-- Close button -->
+  <button (click)="closeChat()" class="close-button" href=" ">Close</button>
+
+  <!-- Chat content goes here -->
+  <div class="chat-content">
+    <!-- Your chat messages and input box go here -->
+  </div>
+</div>
+</section>

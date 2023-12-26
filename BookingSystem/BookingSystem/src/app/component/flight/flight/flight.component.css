@@ -1,0 +1,13 @@
+.sub-container {
+  margin: 2%;
+}
+.createBusButton {
+  float: right;
+  margin-top: 7px;
+}
+.customCardHeader {
+  background-color: #5161ce;
+  color: #fff;
+  font-weight: 600;
+  font-size: x-large;
+}

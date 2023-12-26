@@ -1,0 +1,65 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="main-content">
+  <div class="sub-container">
+    <div class="card" style="width: auto">
+      <div class="card-header customCardHeader">
+        <h2>
+          <span>Train List</span>
+          <button
+            *ngIf="isAdmin()"
+            (click)="navigateToCreateTrain()"
+            class="btn btn-success btn-sm ml-2 createBusButton"
+          >
+            <i class="fa fa-plus"></i> Add
+          </button>
+        </h2>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Train Number</th>
+              <th scope="col">Train Name</th>
+              <th scope="col">Capacity</th>
+              <th scope="col">Departure</th>
+              <th scope="col">Arrival</th>
+              <th scope="col">Source</th>
+              <th scope="col">Destination</th>
+              <th scope="col">Ticket Amount</th>
+              <th scope="col" *ngIf="isAdmin()">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tempTrain of train">
+              <td>{{ tempTrain.trainId }}</td>
+              <td>{{ tempTrain.trainNumber }}</td>
+              <td>{{ tempTrain.trainName }}</td>
+              <td>{{ tempTrain.capacity }}</td>
+              <td>{{ tempTrain.departure }}</td>
+              <td>{{ tempTrain.arrival }}</td>
+              <td>{{ tempTrain.source }}</td>
+              <td>{{ tempTrain.destination }}</td>
+              <td>{{ tempTrain.ticket_amount }}</td>
+              <td *ngIf="isAdmin()">
+                <!-- <button (click)="viewBus(tempTrain)" class="btn btn-primary btn-sm">View</button> -->
+                <button
+                  (click)="navigateToUpdateTrain(tempTrain.trainId)"
+                  class="btn btn-warning btn-sm"
+                >
+                  Edit
+                </button>
+                <button
+                  (click)="deleteTrain(tempTrain.trainId)"
+                  class="btn btn-danger btn-sm"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
